@@ -133,15 +133,13 @@ The entire DQ logic is modular and reusable.
 Project Structure
 
 fleet-fuel-analytics/
-│
 ├── README.md
 ├── notebooks/
+│   ├── 00_pipeline_runner.py
 │   ├── 01_data_generator.py
 │   ├── 02_bronze_ingestion.py
 │   ├── 03_silver_transformations.py
-│   ├── 04_gold_analytics.py
-│   └── 00_pipeline_runner.py
-│
+│   └── 04_gold_analytics.py
 ├── src/
 │   ├── etl/
 │   │   ├── bronze.py
@@ -153,7 +151,6 @@ fleet-fuel-analytics/
 │   │   └── quality_checks.py
 │   └── config/
 │       └── settings.py
-│
 └── tests/
     ├── test_silver_transforms.py
     ├── test_efficiency_metrics.py
