@@ -132,29 +132,37 @@ The entire DQ logic is modular and reusable.
 
 Project Structure
 
-fleet-fuel-analytics/
-├── README.md
-├── notebooks/
-│   ├── 00_pipeline_runner.py
-│   ├── 01_data_generator.py
-│   ├── 02_bronze_ingestion.py
-│   ├── 03_silver_transformations.py
-│   └── 04_gold_analytics.py
-├── src/
-│   ├── etl/
-│   │   ├── bronze.py
-│   │   ├── silver.py
-│   │   └── gold.py
-│   ├── utils/
-│   │   └── hashing.py
-│   ├── dq/
-│   │   └── quality_checks.py
-│   └── config/
-│       └── settings.py
-└── tests/
-    ├── test_silver_transforms.py
-    ├── test_efficiency_metrics.py
-    └── test_data_quality.py
+```mermaid
+flowchart TD
+    A[fleet-fuel-analytics] --> B[README.md]
+
+    A --> C[notebooks]
+    C --> C1[00_pipeline_runner.py]
+    C --> C2[01_data_generator.py]
+    C --> C3[02_bronze_ingestion.py]
+    C --> C4[03_silver_transformations.py]
+    C --> C5[04_gold_analytics.py]
+
+    A --> D[src]
+    D --> D1[etl]
+    D1 --> D1a[bronze.py]
+    D1 --> D1b[silver.py]
+    D1 --> D1c[gold.py]
+
+    D --> D2[utils]
+    D2 --> D2a[hashing.py]
+
+    D --> D3[dq]
+    D3 --> D3a[quality_checks.py]
+
+    D --> D4[config]
+    D4 --> D4a[settings.py]
+
+    A --> E[tests]
+    E --> E1[test_silver_transforms.py]
+    E --> E2[test_efficiency_metrics.py]
+    E --> E3[test_data_quality.py]
+```
 
 ---
 
